@@ -63,13 +63,18 @@
           padding: "10px"
         }
         // No need to change anything ABOVE this line ^
+// Fixes:
+// 1.) I added React Fragment tags <> </> around the return because originally it started with an <h1> tag and ended with a </div> tag
+// 2.) I referenced the useState for the drawCard button line 74
+// 3.) Then fixed the onClick on line 77 because it didn't have a capital C
 
         return (
+          <>
           <h1>Draw a Card</h1>
-          <button onClick={}>
+          <button onClick={drawCard}> 
             Click to Draw a Card
           </button>
-          <button onclick={shuffle}>
+          <button onClick={shuffle}> 
             Return Cards and Shuffle Deck
           </button>
           <div style={handStyles}>
@@ -79,8 +84,9 @@
                   {card}
                 </div>
               )
-            })}
+            })} 
           </div>
+          </>
         )
       }
 
